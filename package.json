@@ -1,6 +1,7 @@
 {
-  "name": "bs-phoenix",
+  "name": "@yutopp/bs-phoenix",
   "version": "0.1.0",
+  "description": "bs-phoenix, a fork of https://github.com/yawaramin/bs-phoenix",
   "scripts": {
     "clean": "bsb -clean-world",
     "build": "bsb -make-world",
@@ -15,5 +16,18 @@
   },
   "dependencies": {
     "phoenix": "^1.3.0"
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yutopp/bs-phoenix.git"
+  },
+  "author": "yutopp <yutopp@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/yutopp/bs-phoenix/issues"
+  },
+  "homepage": "https://github.com/yutopp/bs-phoenix"
 }

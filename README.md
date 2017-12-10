@@ -1,5 +1,7 @@
 # bs-phoenix - BuckleScript bindings for Phoenix.js
 
+This package is a fork of [yawaramin/bs-phoenix](https://github.com/yawaramin/bs-phoenix).
+
 Phoenix.js is the JavaScript client for the Phoenix framework:
 https://github.com/phoenixframework/phoenix/blob/v1.3/assets/js/phoenix.js
 
@@ -27,13 +29,13 @@ let socket = Socket.make "/socket" [%obj { params = { userToken = "123" } }]
 
 Add the package to your npm project:
 
-    $ npm install yawaramin/bs-phoenix
+    $ npm install @yutopp/bs-phoenix
 
 Add the BuckleScript dependency to your `bsconfig.json`:
 
     {
       ...,
-      "bs-dependencies": [..., "phoenix"]
+      "bs-dependencies": [..., "bs-phoenix"]
     }
 
 And see the `src/test.ml` file for examples of what the code should look
