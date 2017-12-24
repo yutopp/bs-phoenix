@@ -1,15 +1,4 @@
-type event = string
-type timeoutMs = float
-
-module Push = struct
-  type t
-
-  external resend : timeoutMs -> _ = "" [@@bs.send.pipe: t]
-  external send : t -> _ = "" [@@bs.send]
-
-  external receive : event -> ('payload Js.t -> unit) -> t =
-    "" [@@bs.send.pipe: t]
-end
+open Common
 
 module rec Channel : sig
   type t
@@ -76,10 +65,10 @@ and Socket : sig
   external protocol : t -> string = "" [@@bs.send]
   external endPointURL : t -> string = "" [@@bs.send]
 
+  external connect : unit = "" [@@bs.send.pipe: t]
   external disconnect : (unit -> 'a) -> 'code -> string -> 'a =
     "" [@@bs.send.pipe: t]
 
-  external connect : 'params Js.t -> unit = "" [@@bs.send.pipe: t]
   external onOpen : (event -> 'a) -> unit = "" [@@bs.send.pipe: t]
   external onClose : (event -> 'a) -> unit = "" [@@bs.send.pipe: t]
   external onError : (event -> 'a) -> unit = "" [@@bs.send.pipe: t]
@@ -103,10 +92,10 @@ end = struct
   external protocol : t -> string = "" [@@bs.send]
   external endPointURL : t -> string = "" [@@bs.send]
 
+  external connect : unit = "" [@@bs.send.pipe: t]
   external disconnect : (unit -> 'a) -> 'code -> string -> 'a =
     "" [@@bs.send.pipe: t]
 
-  external connect : 'params Js.t -> unit = "" [@@bs.send.pipe: t]
   external onOpen : (event -> 'a) -> unit = "" [@@bs.send.pipe: t]
   external onClose : (event -> 'a) -> unit = "" [@@bs.send.pipe: t]
   external onError : (event -> 'a) -> unit = "" [@@bs.send.pipe: t]
